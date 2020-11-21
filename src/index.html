@@ -13,17 +13,48 @@
     <link rel="shortcut icon" href="./4geeks.ico" />
   </head>
   <body>
-    <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+    <div>
+      <div class="container">
+        <button
+          type="button"
+          class="btn btn-secondary btn-sm"
+          onclick="newcard()"
+        >
+          New Card !
+        </button>
+      </div>
+      <div class="align-center">
+        <div
+          class="card d-flex flex-column align-items-center justify-content-center align-center"
+        >
+          <h1></h1>
+        </div>
       </div>
     </div>
+
+    <div><img src="" id="myImg" alt="" /></div>
+    <script>
+      function newcard() {
+        console.log("newcard");
+        let suit = ["club", "spade", "heart", "diamond"];
+        let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K"];
+        let suspect = [
+          "https://deadline.com/wp-content/uploads/2018/11/miss-scarlet.jpg",
+          "https://i.pinimg.com/originals/57/b4/88/57b488b62e595bc5664ee819867ff085.jpg"
+        ];
+
+        function getRndInteger(min, max) {
+          return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        let card = document.querySelector(".card");
+        let cardnumber = document.querySelector("h1");
+
+        card.classList.add(suit[getRndInteger(0, suit.length)]);
+        cardnumber.innerHTML = number[getRndInteger(0, number.length)];
+        document.getElementById("myImg").src =
+          suspect[getRndInteger(0, suspect.length)];
+      }
+    </script>
   </body>
 </html>
