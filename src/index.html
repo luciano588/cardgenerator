@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
+    <title>New Card</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
@@ -38,10 +38,6 @@
         console.log("newcard");
         let suit = ["club", "spade", "heart", "diamond"];
         let number = [1, 2, 3, 4, 5, 6, 7, 8, 9, "J", "Q", "K"];
-        let suspect = [
-          "https://deadline.com/wp-content/uploads/2018/11/miss-scarlet.jpg",
-          "https://i.pinimg.com/originals/57/b4/88/57b488b62e595bc5664ee819867ff085.jpg"
-        ];
 
         function getRndInteger(min, max) {
           return Math.floor(Math.random() * (max - min)) + min;
@@ -52,8 +48,6 @@
 
         card.classList.add(suit[getRndInteger(0, suit.length)]);
         cardnumber.innerHTML = number[getRndInteger(0, number.length)];
-        document.getElementById("myImg").src =
-          suspect[getRndInteger(0, suspect.length)];
       }
     </script>
   </body>

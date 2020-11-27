@@ -3,6 +3,10 @@ body {
   background: green;
 }
 .card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: white;
   width: 250px;
   height: 400px;
@@ -49,8 +53,4 @@ body {
 .spade::after,
 .spade::before {
   content: "\2660";
-}
-.card {
-  position: absolute;
-  top: 150px;
 }
